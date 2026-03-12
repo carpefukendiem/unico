@@ -65,19 +65,6 @@ function ChevronDownIcon({ className }: { className?: string }) {
   );
 }
 
-function ExternalLinkIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 16 16"
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <path d="M8.636 3.5a.5.5 0 00-.5-.5H1.5A1.5 1.5 0 000 4.5v10A1.5 1.5 0 001.5 16h10a1.5 1.5 0 001.5-1.5V7.864a.5.5 0 00-1 0V14.5a.5.5 0 01-.5.5h-10a.5.5 0 01-.5-.5v-10a.5.5 0 01.5-.5h6.636a.5.5 0 00.5-.5z" />
-      <path d="M16 .5a.5.5 0 00-.5-.5h-5a.5.5 0 000 1h3.793L6.146 9.146a.5.5 0 10.708.708L15 1.707V5.5a.5.5 0 001 0v-5z" />
-    </svg>
-  );
-}
 
 function MenuIcon({ className }: { className?: string }) {
   return (
@@ -186,9 +173,6 @@ function DesktopNavItem({ link }: { link: NavLink }) {
                 onClick={() => setOpen(false)}
               >
                 <span>{item.label}</span>
-                {item.external && (
-                  <ExternalLinkIcon className="h-3 w-3 shrink-0 opacity-50" />
-                )}
               </ItemTag>
             );
           })}
@@ -209,9 +193,6 @@ function DesktopNavItem({ link }: { link: NavLink }) {
       className="flex items-center gap-1 px-3 py-2 text-sm font-medium uppercase tracking-wide text-white/90 transition-colors hover:text-white"
     >
       {link.label}
-      {link.external && (
-        <ExternalLinkIcon className="h-3 w-3 opacity-50" />
-      )}
     </Tag>
   );
 }
@@ -468,9 +449,6 @@ export default function Header() {
                                 onClick={() => setMobileMenuOpen(false)}
                               >
                                 <span>{item.label}</span>
-                                {item.external && (
-                                  <ExternalLinkIcon className="h-3 w-3 opacity-40" />
-                                )}
                               </ItemTag>
                             </li>
                           );
@@ -497,9 +475,6 @@ export default function Header() {
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       <span>{link.label}</span>
-                      {link.external && (
-                        <ExternalLinkIcon className="h-3 w-3 opacity-40" />
-                      )}
                     </Tag>
                   </li>
                 );
