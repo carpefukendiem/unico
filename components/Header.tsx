@@ -283,13 +283,13 @@ export default function Header() {
             className="group flex items-center gap-3"
             aria-label={`${SITE.nameAccented} - Home`}
           >
-            <div className="relative h-14 w-14 shrink-0 overflow-hidden transition-all duration-300">
+            <div className="relative h-14 w-14 shrink-0 overflow-hidden p-1 transition-all duration-300">
               <Image
                 src="/images/logo.png"
                 alt={`${SITE.nameAccented} crest`}
                 fill
                 sizes="56px"
-                className="object-contain"
+                className="object-contain p-0.5"
                 priority
               />
             </div>
@@ -386,7 +386,7 @@ export default function Header() {
                   alt={`${SITE.nameAccented} crest`}
                   fill
                   sizes="48px"
-                  className="object-contain"
+                  className="object-contain p-0.5"
                 />
               </div>
               <span className="font-heading text-base font-bold uppercase tracking-wider text-white">
