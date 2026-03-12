@@ -18,7 +18,7 @@ const campFeatures = [
     description:
       "Focused training on ball control, passing, shooting, and tactical awareness led by our licensed coaching staff.",
     icon: (
-      <svg className="h-8 w-8 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <svg className="h-8 w-8 text-primary-light" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
       </svg>
     ),
@@ -28,7 +28,7 @@ const campFeatures = [
     description:
       "Daily scrimmages and small-sided games that challenge players to apply skills in match-like scenarios.",
     icon: (
-      <svg className="h-8 w-8 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <svg className="h-8 w-8 text-primary-light" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M18.75 4.236c.982.143 1.954.317 2.916.52A6.003 6.003 0 0 1 16.27 9.728M18.75 4.236V4.5c0 2.108-.966 3.99-2.48 5.228m0 0a6.016 6.016 0 0 1-2.52.952m0 0a6.016 6.016 0 0 1-2.52-.952" />
       </svg>
     ),
@@ -38,7 +38,7 @@ const campFeatures = [
     description:
       "Emphasis on teamwork, sportsmanship, discipline, and leadership that extends beyond the field.",
     icon: (
-      <svg className="h-8 w-8 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <svg className="h-8 w-8 text-primary-light" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
       </svg>
     ),
@@ -66,7 +66,7 @@ export default function CampsPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/80 to-primary/60" />
         <div className="relative z-10 px-6 py-24 text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-gold">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-blue-200">
             {SITE.nameAccented}
           </p>
           <h1 className="text-5xl font-extrabold leading-tight text-white md:text-6xl lg:text-7xl">
@@ -87,7 +87,7 @@ export default function CampsPage() {
           <h2 className="text-3xl font-bold text-primary-dark md:text-4xl">
             Train Like an Elite Player
           </h2>
-          <div className="mx-auto mt-3 h-1 w-16 rounded bg-gold" />
+          <div className="mx-auto mt-3 h-1 w-16 rounded bg-primary-light" />
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
             Our summer camp programs are designed to push young athletes to the
             next level. Whether your child is just starting out or preparing for
@@ -101,7 +101,7 @@ export default function CampsPage() {
       {/* ----------------------------------------------------------------- */}
       {/* Camp Features */}
       {/* ----------------------------------------------------------------- */}
-      <section className="bg-light-bg py-20">
+      <section className="bg-surface py-20">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-8 md:grid-cols-3">
             {campFeatures.map((feature) => (
@@ -135,7 +135,7 @@ export default function CampsPage() {
               <div
                 key={item.label}
                 className={`flex items-center justify-between px-8 py-5 ${
-                  idx % 2 === 0 ? "bg-white" : "bg-light-bg"
+                  idx % 2 === 0 ? "bg-white" : "bg-surface"
                 }`}
               >
                 <span className="font-semibold text-primary-dark">
@@ -163,7 +163,7 @@ export default function CampsPage() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-full bg-gold px-8 py-3 font-semibold text-primary-dark transition hover:bg-gold-dark"
+              className="inline-flex items-center rounded-full bg-white px-8 py-3 font-semibold text-primary-dark transition hover:bg-blue-100"
             >
               Contact Us
             </Link>

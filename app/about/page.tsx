@@ -44,7 +44,7 @@ function HeroBanner() {
           <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
           </svg>
-          <span className="text-gold">About</span>
+          <span className="text-white">About</span>
         </nav>
 
         <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
@@ -69,7 +69,7 @@ function ClubInfo() {
             <div className="relative">
               {/* Decorative ring */}
               <div className="absolute -inset-6 rounded-full border-2 border-dashed border-primary/10" />
-              <div className="absolute -inset-12 rounded-full border border-dashed border-gold/10" />
+              <div className="absolute -inset-12 rounded-full border border-dashed border-primary-light/10" />
               <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white bg-white p-4 shadow-2xl sm:h-72 sm:w-72">
                 <Image
                   src="/images/logo.png"
@@ -84,7 +84,7 @@ function ClubInfo() {
 
           {/* Text area - 3 cols */}
           <div className="lg:col-span-3">
-            <span className="text-sm font-bold uppercase tracking-[0.2em] text-gold">
+            <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary-light">
               Our Story
             </span>
             <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-primary-dark sm:text-4xl">
@@ -191,14 +191,14 @@ function MissionValues() {
       <div className="container-site">
         {/* Section heading */}
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-bold uppercase tracking-[0.2em] text-gold">
+          <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary-light">
             What Drives Us
           </span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-primary-dark sm:text-4xl lg:text-5xl">
             MISSION &amp; VALUES
           </h2>
           <div className="section-divider mx-auto mt-4" />
-          <p className="mt-6 text-lg leading-relaxed text-dark-muted/70">
+          <p className="mt-6 text-lg leading-relaxed text-dark-muted/80">
             Every decision we make is guided by our commitment to developing
             not just great soccer players, but great people.
           </p>
@@ -219,7 +219,7 @@ function MissionValues() {
               <h3 className="text-lg font-bold text-primary-dark">
                 {value.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-dark-muted/70">
+              <p className="mt-3 text-sm leading-relaxed text-dark-muted/80">
                 {value.description}
               </p>
             </div>
@@ -266,7 +266,7 @@ function HistoryTimeline() {
       <div className="container-site">
         {/* Heading */}
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-bold uppercase tracking-[0.2em] text-gold">
+          <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary-light">
             Our Journey
           </span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-primary-dark sm:text-4xl lg:text-5xl">
@@ -296,13 +296,13 @@ function HistoryTimeline() {
                         isLeft ? "pr-12 text-right" : "order-2 pl-12"
                       }`}
                     >
-                      <span className="text-gradient-gold text-5xl font-extrabold">
+                      <span className="text-5xl font-extrabold text-primary-light">
                         {item.year}
                       </span>
                       <h3 className="mt-2 text-xl font-bold text-primary-dark">
                         {item.title}
                       </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-dark-muted/70">
+                      <p className="mt-3 text-sm leading-relaxed text-dark-muted/80">
                         {item.description}
                       </p>
                     </div>
@@ -313,24 +313,24 @@ function HistoryTimeline() {
 
                   {/* Mobile layout */}
                   <div className="pl-12 md:hidden">
-                    <span className="text-gradient-gold text-4xl font-extrabold">
+                    <span className="text-4xl font-extrabold text-primary-light">
                       {item.year}
                     </span>
                     <h3 className="mt-2 text-lg font-bold text-primary-dark">
                       {item.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-dark-muted/70">
+                    <p className="mt-3 text-sm leading-relaxed text-dark-muted/80">
                       {item.description}
                     </p>
                   </div>
 
                   {/* Center dot */}
                   <div className="absolute left-1/2 top-2 hidden h-5 w-5 -translate-x-1/2 md:block">
-                    <div className="h-full w-full rounded-full border-4 border-white bg-gold shadow-md" />
+                    <div className="h-full w-full rounded-full border-4 border-white bg-primary-light shadow-md" />
                   </div>
                   {/* Mobile dot */}
                   <div className="absolute left-[20px] top-2 h-4 w-4 -translate-x-1/2 md:hidden">
-                    <div className="h-full w-full rounded-full border-4 border-white bg-gold shadow-md" />
+                    <div className="h-full w-full rounded-full border-4 border-white bg-primary-light shadow-md" />
                   </div>
                 </div>
               );

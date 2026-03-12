@@ -28,13 +28,13 @@ export default function CoachesPage() {
               Home
             </Link>
             <span>/</span>
-            <span className="text-[#D4A843]">Coaches</span>
+            <span className="text-white">Coaches</span>
           </nav>
 
           <h1 className="text-5xl font-extrabold tracking-tight md:text-6xl">
             COACHES
           </h1>
-          <p className="mt-3 text-lg font-medium tracking-widest text-[#D4A843]">
+          <p className="mt-3 text-lg font-medium tracking-widest text-blue-200">
             Dedication. Expertise. Passion.
           </p>
         </div>

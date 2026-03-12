@@ -101,17 +101,17 @@ export default function Footer() {
         {/* Background decorative elements */}
         <div className="absolute inset-0" aria-hidden="true">
           <div className="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-primary-light/10 blur-3xl" />
-          <div className="absolute -bottom-20 -right-20 h-72 w-72 rounded-full bg-gold/10 blur-3xl" />
+          <div className="absolute -bottom-20 -right-20 h-72 w-72 rounded-full bg-primary-light/10 blur-3xl" />
           <div className="absolute inset-0 bg-[url('/images/hero-1.jpg')] bg-cover bg-center opacity-[0.05]" />
         </div>
 
         <div className="container-site relative text-center">
-          <span className="mb-4 inline-block font-heading text-sm font-semibold uppercase tracking-[0.2em] text-gold">
+          <span className="mb-4 inline-block font-heading text-sm font-semibold uppercase tracking-[0.2em] text-blue-200">
             Join Our Club
           </span>
           <h2 className="mx-auto mb-6 max-w-2xl text-4xl font-bold text-white sm:text-5xl">
             Ready to Join the{' '}
-            <span className="text-gradient-gold">{SITE.nameAccented}</span>{' '}
+            <span className="text-white">{SITE.nameAccented}</span>{' '}
             Family?
           </h2>
           <p className="mx-auto mb-10 max-w-xl text-lg text-white/70">
@@ -149,20 +149,20 @@ export default function Footer() {
             {/* Column 1: Club Info */}
             <div className="sm:col-span-2 lg:col-span-1">
               <Link href="/" className="mb-5 flex items-center gap-3">
-                <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border-2 border-gold/30">
+                <div className="relative h-14 w-14 shrink-0 overflow-hidden">
                   <Image
                     src="/images/logo.png"
                     alt={`${SITE.nameAccented} crest`}
                     fill
                     sizes="56px"
-                    className="object-contain p-0.5"
+                    className="object-contain"
                   />
                 </div>
                 <div className="flex flex-col">
                   <span className="font-heading text-lg font-bold uppercase tracking-wider text-white">
                     {SITE.nameAccented.split(' ').slice(0, 1).join(' ')}
                   </span>
-                  <span className="font-heading text-[0.6rem] font-medium uppercase tracking-[0.2em] text-gold">
+                  <span className="font-heading text-[0.6rem] font-medium uppercase tracking-[0.2em] text-blue-200">
                     Futbol Club
                   </span>
                 </div>
@@ -199,9 +199,9 @@ export default function Footer() {
                       <Tag
                         href={link.href}
                         {...externalProps}
-                        className="inline-flex items-center gap-1.5 text-sm transition-colors hover:text-gold"
+                        className="inline-flex items-center gap-1.5 text-sm transition-colors hover:text-blue-200"
                       >
-                        <span className="h-px w-3 bg-gold/40 transition-all group-hover:w-5 group-hover:bg-gold" />
+                        <span className="h-px w-3 bg-white/30 transition-all group-hover:w-5 group-hover:bg-white/60" />
                         {link.label}
                       </Tag>
                     </li>
@@ -212,9 +212,9 @@ export default function Footer() {
                     href="https://system.gotsport.com/programs/593K68654?reg_role=player"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm transition-colors hover:text-gold"
+                    className="inline-flex items-center gap-1.5 text-sm transition-colors hover:text-blue-200"
                   >
-                    <span className="h-px w-3 bg-gold/40" />
+                    <span className="h-px w-3 bg-white/30" />
                     Registration
                   </a>
                 </li>
@@ -223,9 +223,9 @@ export default function Footer() {
                     href="https://unicofutbolclub.itemorder.com/shop/home/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm transition-colors hover:text-gold"
+                    className="inline-flex items-center gap-1.5 text-sm transition-colors hover:text-blue-200"
                   >
-                    <span className="h-px w-3 bg-gold/40" />
+                    <span className="h-px w-3 bg-white/30" />
                     Fan Gear
                   </a>
                 </li>
@@ -241,23 +241,23 @@ export default function Footer() {
                 <li>
                   <a
                     href={CONTACT.phoneHref}
-                    className="flex items-start gap-3 text-sm transition-colors hover:text-gold"
+                    className="flex items-start gap-3 text-sm transition-colors hover:text-blue-200"
                   >
-                    <PhoneIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold/60" />
+                    <PhoneIcon className="mt-0.5 h-4 w-4 shrink-0 text-blue-200/60" />
                     <span>{CONTACT.phone}</span>
                   </a>
                 </li>
                 <li>
                   <a
                     href={`mailto:${CONTACT.email}`}
-                    className="flex items-start gap-3 text-sm transition-colors hover:text-gold"
+                    className="flex items-start gap-3 text-sm transition-colors hover:text-blue-200"
                   >
-                    <EnvelopeIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold/60" />
+                    <EnvelopeIcon className="mt-0.5 h-4 w-4 shrink-0 text-blue-200/60" />
                     <span>{CONTACT.email}</span>
                   </a>
                 </li>
                 <li className="flex items-start gap-3 text-sm">
-                  <MapPinIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold/60" />
+                  <MapPinIcon className="mt-0.5 h-4 w-4 shrink-0 text-blue-200/60" />
                   <span>{CONTACT.location}</span>
                 </li>
               </ul>
@@ -275,7 +275,7 @@ export default function Footer() {
                     href={affiliate.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-center rounded-lg bg-white/5 p-3 transition-all hover:bg-white/10"
+                    className="group flex items-center justify-center rounded-lg bg-white/10 p-3 transition-all hover:bg-white/20 hover:shadow-lg hover:shadow-white/5"
                     aria-label={affiliate.name}
                   >
                     <div className="relative h-12 w-full">
@@ -284,7 +284,7 @@ export default function Footer() {
                         alt={affiliate.name}
                         fill
                         sizes="120px"
-                        className="object-contain opacity-60 transition-opacity group-hover:opacity-90"
+                        className="object-contain transition-transform duration-300 group-hover:scale-110"
                       />
                     </div>
                   </a>
@@ -312,7 +312,7 @@ export default function Footer() {
                     alt={affiliate.name}
                     fill
                     sizes="112px"
-                    className="object-contain opacity-40 transition-opacity group-hover:opacity-70"
+                    className="object-contain transition-transform duration-300 group-hover:scale-110"
                   />
                 </div>
               </a>
@@ -331,7 +331,7 @@ export default function Footer() {
                 href={CONTACT.instagram.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/40 transition-colors hover:text-gold"
+                className="text-white/40 transition-colors hover:text-blue-200"
                 aria-label="Instagram"
               >
                 <InstagramIcon className="h-5 w-5" />

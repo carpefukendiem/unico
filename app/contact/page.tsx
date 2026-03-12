@@ -28,7 +28,7 @@ export default function ContactPage() {
               Home
             </Link>
             <span>/</span>
-            <span className="text-[#D4A843]">Contact</span>
+            <span className="text-white">Contact</span>
           </nav>
 
           <h1 className="text-5xl font-extrabold tracking-tight md:text-6xl">

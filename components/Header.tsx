@@ -154,7 +154,7 @@ function DesktopNavItem({ link }: { link: NavLink }) {
           aria-expanded={open}
           aria-haspopup="true"
           onClick={() => setOpen(!open)}
-          className="flex items-center gap-1 px-3 py-2 text-sm font-medium uppercase tracking-wide text-white/90 transition-colors hover:text-gold"
+          className="flex items-center gap-1 px-3 py-2 text-sm font-medium uppercase tracking-wide text-white/90 transition-colors hover:text-white"
         >
           {link.label}
           <ChevronDownIcon
@@ -182,7 +182,7 @@ function DesktopNavItem({ link }: { link: NavLink }) {
                 href={item.href}
                 role="menuitem"
                 {...externalProps}
-                className="flex items-center justify-between gap-3 px-4 py-3 text-sm text-white/80 transition-colors hover:bg-white/5 hover:text-gold"
+                className="flex items-center justify-between gap-3 px-4 py-3 text-sm text-white/80 transition-colors hover:bg-white/5 hover:text-white"
                 onClick={() => setOpen(false)}
               >
                 <span>{item.label}</span>
@@ -206,7 +206,7 @@ function DesktopNavItem({ link }: { link: NavLink }) {
     <Tag
       href={link.href}
       {...externalProps}
-      className="flex items-center gap-1 px-3 py-2 text-sm font-medium uppercase tracking-wide text-white/90 transition-colors hover:text-gold"
+      className="flex items-center gap-1 px-3 py-2 text-sm font-medium uppercase tracking-wide text-white/90 transition-colors hover:text-white"
     >
       {link.label}
       {link.external && (
@@ -302,13 +302,13 @@ export default function Header() {
             className="group flex items-center gap-3"
             aria-label={`${SITE.nameAccented} - Home`}
           >
-            <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 border-gold/40 transition-all duration-300 group-hover:border-gold">
+            <div className="relative h-14 w-14 shrink-0 overflow-hidden transition-all duration-300">
               <Image
                 src="/images/logo.png"
                 alt={`${SITE.nameAccented} crest`}
                 fill
-                sizes="48px"
-                className="object-contain p-0.5"
+                sizes="56px"
+                className="object-contain"
                 priority
               />
             </div>
@@ -316,7 +316,7 @@ export default function Header() {
               <span className="font-heading text-lg font-bold uppercase leading-tight tracking-wider text-white">
                 {SITE.nameAccented.split(' ').slice(0, 1).join(' ')}
               </span>
-              <span className="font-heading text-[0.65rem] font-medium uppercase tracking-[0.2em] text-gold">
+              <span className="font-heading text-[0.65rem] font-medium uppercase tracking-[0.2em] text-blue-200">
                 Futbol Club
               </span>
             </div>
@@ -399,13 +399,13 @@ export default function Header() {
               className="flex items-center gap-3"
               onClick={() => setMobileMenuOpen(false)}
             >
-              <div className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-gold/40">
+              <div className="relative h-12 w-12 overflow-hidden">
                 <Image
                   src="/images/logo.png"
                   alt={`${SITE.nameAccented} crest`}
                   fill
-                  sizes="40px"
-                  className="object-contain p-0.5"
+                  sizes="48px"
+                  className="object-contain"
                 />
               </div>
               <span className="font-heading text-base font-bold uppercase tracking-wider text-white">
@@ -464,7 +464,7 @@ export default function Header() {
                               <ItemTag
                                 href={item.href}
                                 {...externalProps}
-                                className="flex items-center justify-between rounded-lg px-8 py-2.5 text-sm text-white/70 transition-colors hover:bg-white/5 hover:text-gold"
+                                className="flex items-center justify-between rounded-lg px-8 py-2.5 text-sm text-white/70 transition-colors hover:bg-white/5 hover:text-white"
                                 onClick={() => setMobileMenuOpen(false)}
                               >
                                 <span>{item.label}</span>

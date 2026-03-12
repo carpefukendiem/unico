@@ -50,7 +50,7 @@ function HeroSection() {
 
         <h1 className="text-5xl font-extrabold leading-none tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
           <span className="block">&Uacute;NICO</span>
-          <span className="block text-gradient-gold">FUTBOL CLUB</span>
+          <span className="block text-gradient-accent">FUTBOL CLUB</span>
         </h1>
 
         <p className="mt-6 max-w-xl text-lg font-medium text-white/80 sm:text-xl md:text-2xl">
@@ -121,12 +121,12 @@ function AboutPreview() {
               />
             </div>
             {/* Decorative accent */}
-            <div className="absolute -left-4 -top-4 -z-10 h-full w-full rounded-2xl bg-gradient-to-br from-primary/10 to-gold/10" />
+            <div className="absolute -left-4 -top-4 -z-10 h-full w-full rounded-2xl bg-gradient-to-br from-primary/10 to-primary-light/10" />
           </div>
 
           {/* Text content */}
           <div className="lg:pl-4">
-            <span className="mb-2 inline-block text-sm font-bold uppercase tracking-[0.2em] text-gold">
+            <span className="mb-2 inline-block text-sm font-bold uppercase tracking-[0.2em] text-primary-light">
               Who We Are
             </span>
             <h2 className="text-3xl font-extrabold tracking-tight text-primary-dark sm:text-4xl lg:text-5xl">
@@ -221,7 +221,7 @@ function ProgramsSection() {
       <div className="container-site">
         {/* Heading */}
         <div className="text-center">
-          <span className="text-sm font-bold uppercase tracking-[0.2em] text-gold">
+          <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary-light">
             What We Offer
           </span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-primary-dark sm:text-4xl lg:text-5xl">
@@ -249,10 +249,10 @@ function ProgramsSection() {
                 <h3 className="text-xl font-bold text-primary-dark">
                   {program.title}
                 </h3>
-                <span className="mt-1 text-xs font-semibold uppercase tracking-wider text-gold">
+                <span className="mt-1 text-xs font-semibold uppercase tracking-wider text-primary-light">
                   {program.detail}
                 </span>
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-dark-muted/70">
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-dark-muted/80">
                   {program.description}
                 </p>
                 <Link
@@ -276,8 +276,8 @@ function ProgramsSection() {
                 </Link>
               </div>
 
-              {/* Gold accent bar at bottom */}
-              <div className="gradient-gold h-1 w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              {/* Blue accent bar at bottom */}
+              <div className="gradient-primary h-1 w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </div>
           ))}
         </div>
@@ -318,7 +318,7 @@ function StatsBar() {
               <p className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
                 {stat.value}
               </p>
-              <p className="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-gold">
+              <p className="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-blue-200">
                 {stat.label}
               </p>
             </div>
@@ -346,7 +346,7 @@ function GallerySection() {
       <div className="container-site">
         {/* Heading */}
         <div className="text-center">
-          <span className="text-sm font-bold uppercase tracking-[0.2em] text-gold">
+          <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary-light">
             Our Moments
           </span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-primary-dark sm:text-4xl lg:text-5xl">
@@ -431,7 +431,7 @@ function SponsorsSection() {
       <div className="container-site">
         {/* Heading */}
         <div className="text-center">
-          <span className="text-sm font-bold uppercase tracking-[0.2em] text-gold">
+          <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary-light">
             Our Partners
           </span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-primary-dark sm:text-4xl">
@@ -445,7 +445,7 @@ function SponsorsSection() {
           {sponsors.map((sponsor) => (
             <div
               key={sponsor.alt}
-              className="flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0"
+              className="group flex items-center justify-center transition-all duration-300 hover:scale-105"
             >
               <Image
                 src={sponsor.src}

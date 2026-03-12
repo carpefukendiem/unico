@@ -9,7 +9,7 @@ export const COLORS = {
   primary: '#1B3A8C',
   darkNavy: '#0F2461',
   lightBlue: '#3564C4',
-  gold: '#D4A843',
+  accent: '#3564C4',
   white: '#FFFFFF',
   lightGray: '#F8F9FC',
   darkText: '#1A1A2E',

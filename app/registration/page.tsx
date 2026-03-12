@@ -85,7 +85,7 @@ export default function RegistrationPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/80 to-primary/60" />
         <div className="relative z-10 px-6 py-24 text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-gold">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-blue-200">
             {SITE.nameAccented}
           </p>
           <h1 className="text-5xl font-extrabold leading-tight text-white md:text-6xl lg:text-7xl">
@@ -106,7 +106,7 @@ export default function RegistrationPage() {
           <h2 className="text-3xl font-bold text-primary-dark md:text-4xl">
             How to Register
           </h2>
-          <div className="mx-auto mt-3 h-1 w-16 rounded bg-gold" />
+          <div className="mx-auto mt-3 h-1 w-16 rounded bg-primary-light" />
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
             Registration for {SITE.nameAccented} is handled through GotSport,
             our official registration platform. Follow the steps below to get
@@ -118,7 +118,7 @@ export default function RegistrationPage() {
       {/* ----------------------------------------------------------------- */}
       {/* Registration Steps */}
       {/* ----------------------------------------------------------------- */}
-      <section className="bg-light-bg py-20">
+      <section className="bg-surface py-20">
         <div className="mx-auto max-w-4xl px-6">
           <div className="grid gap-8 md:grid-cols-2">
             {steps.map((item) => (
@@ -157,7 +157,7 @@ export default function RegistrationPage() {
               href="https://system.gotsport.com/programs/593K68654?reg_role=player"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-3 font-semibold text-primary-dark transition hover:bg-gold-dark"
+              className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3 font-semibold text-primary-dark transition hover:bg-blue-100"
             >
               Go to Registration Portal
               <svg
@@ -196,7 +196,7 @@ export default function RegistrationPage() {
             {faqs.map((faq) => (
               <div
                 key={faq.question}
-                className="rounded-2xl border border-gray-100 bg-light-bg p-6 md:p-8"
+                className="rounded-2xl border border-gray-100 bg-surface p-6 md:p-8"
               >
                 <h3 className="text-lg font-bold text-primary-dark">
                   {faq.question}
@@ -211,7 +211,7 @@ export default function RegistrationPage() {
       {/* ----------------------------------------------------------------- */}
       {/* Bottom Contact CTA */}
       {/* ----------------------------------------------------------------- */}
-      <section className="bg-light-bg py-16">
+      <section className="bg-surface py-16">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <p className="text-lg text-gray-600">
             Still have questions about registration? We&apos;re here to help.

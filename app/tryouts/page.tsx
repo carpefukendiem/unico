@@ -57,7 +57,7 @@ export default function TryoutsPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/80 to-primary/60" />
         <div className="relative z-10 px-6 py-24 text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-gold">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-blue-200">
             {SITE.nameAccented}
           </p>
           <h1 className="text-5xl font-extrabold leading-tight text-white md:text-6xl lg:text-7xl">
@@ -78,7 +78,7 @@ export default function TryoutsPage() {
           <h2 className="text-3xl font-bold text-primary-dark md:text-4xl">
             Your Path to {SITE.nameAccented}
           </h2>
-          <div className="mx-auto mt-3 h-1 w-16 rounded bg-gold" />
+          <div className="mx-auto mt-3 h-1 w-16 rounded bg-primary-light" />
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
             Tryouts are your opportunity to demonstrate your ability and
             commitment. Our coaching staff evaluates every player in a
@@ -92,7 +92,7 @@ export default function TryoutsPage() {
       {/* ----------------------------------------------------------------- */}
       {/* What to Expect */}
       {/* ----------------------------------------------------------------- */}
-      <section className="bg-light-bg py-20">
+      <section className="bg-surface py-20">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-bold text-primary-dark md:text-4xl">
             What to Expect
@@ -126,12 +126,12 @@ export default function TryoutsPage() {
           <h2 className="mb-10 text-center text-3xl font-bold text-primary-dark md:text-4xl">
             Requirements
           </h2>
-          <div className="rounded-2xl border border-gray-100 bg-light-bg p-8 shadow-sm md:p-10">
+          <div className="rounded-2xl border border-gray-100 bg-surface p-8 shadow-sm md:p-10">
             <ul className="space-y-4">
               {requirements.map((req) => (
                 <li key={req} className="flex items-start gap-3">
                   <svg
-                    className="mt-0.5 h-6 w-6 flex-shrink-0 text-gold"
+                    className="mt-0.5 h-6 w-6 flex-shrink-0 text-primary-light"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -166,7 +166,7 @@ export default function TryoutsPage() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-full bg-gold px-8 py-3 font-semibold text-primary-dark transition hover:bg-gold-dark"
+              className="inline-flex items-center rounded-full bg-white px-8 py-3 font-semibold text-primary-dark transition hover:bg-blue-100"
             >
               Contact Us to Register
             </Link>
