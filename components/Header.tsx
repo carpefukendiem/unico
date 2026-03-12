@@ -283,16 +283,14 @@ export default function Header() {
             className="group flex items-center gap-3"
             aria-label={`${SITE.nameAccented} - Home`}
           >
-            <div className="relative h-14 w-14 shrink-0 overflow-hidden p-1 transition-all duration-300">
-              <Image
-                src="/images/logo.png"
-                alt={`${SITE.nameAccented} crest`}
-                fill
-                sizes="56px"
-                className="object-contain p-0.5"
-                priority
-              />
-            </div>
+            <Image
+              src="/images/logo.png"
+              alt={`${SITE.nameAccented} crest`}
+              width={64}
+              height={64}
+              className="shrink-0 object-contain transition-all duration-300"
+              priority
+            />
             <div className="hidden flex-col sm:flex">
               <span className="font-heading text-lg font-bold uppercase leading-tight tracking-wider text-white">
                 {SITE.nameAccented.split(' ').slice(0, 1).join(' ')}
@@ -380,15 +378,13 @@ export default function Header() {
               className="flex items-center gap-3"
               onClick={() => setMobileMenuOpen(false)}
             >
-              <div className="relative h-12 w-12 overflow-hidden">
-                <Image
-                  src="/images/logo.png"
-                  alt={`${SITE.nameAccented} crest`}
-                  fill
-                  sizes="48px"
-                  className="object-contain p-0.5"
-                />
-              </div>
+              <Image
+                src="/images/logo.png"
+                alt={`${SITE.nameAccented} crest`}
+                width={44}
+                height={44}
+                className="shrink-0 object-contain"
+              />
               <span className="font-heading text-base font-bold uppercase tracking-wider text-white">
                 {SITE.nameAccented}
               </span>
