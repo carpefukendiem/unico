@@ -294,32 +294,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Affiliate logos row (full width) */}
-        <div className="border-t border-white/5">
-          <div className="container-site flex flex-wrap items-center justify-center gap-8 py-8 sm:gap-12">
-            {AFFILIATES.map((affiliate) => (
-              <a
-                key={`row-${affiliate.name}`}
-                href={affiliate.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
-                aria-label={affiliate.name}
-              >
-                <div className="relative h-10 w-24 sm:w-28">
-                  <Image
-                    src={affiliate.logo}
-                    alt={affiliate.name}
-                    fill
-                    sizes="112px"
-                    className="object-contain transition-transform duration-300 group-hover:scale-110"
-                  />
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-
         {/* Bottom bar */}
         <div className="border-t border-white/5">
           <div className="container-site flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
