@@ -214,6 +214,26 @@ export default function RegistrationPage() {
       <section className="bg-surface py-16">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <p className="text-lg text-gray-600">
+          <div className="mx-auto mt-10 max-w-2xl rounded-2xl border border-white/20 bg-white/5 p-6 text-left backdrop-blur-sm">
+            <h3 className="mb-4 font-heading text-lg font-bold uppercase tracking-wide text-white">
+              What to do next
+            </h3>
+            <ol className="space-y-3 text-white/90">
+              <li className="flex gap-3">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/20 font-bold text-white">1</span>
+                <span>Create a parent/guardian account in our registration portal.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/20 font-bold text-white">2</span>
+                <span>Complete your player&apos;s profile and select the right program.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/20 font-bold text-white">3</span>
+                <span>Submit payment to secure your spot. We&apos;ll confirm and send next steps.</span>
+              </li>
+            </ol>
+          </div>
+          <p className="mx-auto mt-8 max-w-2xl text-center text-white/90">
             Still have questions about registration? We&apos;re here to help.
           </p>
           <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">

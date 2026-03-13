@@ -309,6 +309,16 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-4">
               <a
+                href="#main-content"
+                className="inline-flex items-center gap-1.5 text-xs text-white/60 transition-colors hover:text-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-dark"
+                aria-label="Back to top"
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                </svg>
+                Back to top
+              </a>
+              <a
                 href={CONTACT.instagram.url}
                 target="_blank"
                 rel="noopener noreferrer"

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import LeadForm from "@/components/LeadForm";
 import { CONTACT } from "@/lib/constants";
 
@@ -19,26 +18,20 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-[#F8F9FC]">
       {/* Hero Section */}
-      <section className="relative bg-[#0F2461] py-20 text-white">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0F2461] via-[#1B3A8C] to-[#0F2461]" />
-        <div className="relative mx-auto max-w-6xl px-6">
-          {/* Breadcrumb */}
-          <nav className="mb-8 flex items-center gap-2 text-sm text-blue-200">
-            <Link href="/" className="transition-colors hover:text-white">
-              Home
-            </Link>
-            <span>/</span>
-            <span className="text-white">Contact</span>
-          </nav>
-
+      <section className="relative bg-primary-dark py-24 text-white">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary to-primary-dark" />
+        <div className="container-site relative">
           <h1 className="text-5xl font-extrabold tracking-tight md:text-6xl">
             GET IN TOUCH
           </h1>
+          <p className="mt-3 text-lg font-medium tracking-widest text-blue-200">
+            We&apos;d love to hear from you.
+          </p>
         </div>
       </section>
 
       {/* Content */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="container-site py-24">
         <div className="grid gap-12 lg:grid-cols-2">
           {/* Left Column - Contact Info & Map */}
           <div className="space-y-6">
@@ -169,8 +162,8 @@ export default function ContactPage() {
       </section>
 
       {/* Follow on Instagram */}
-      <section className="border-t border-gray-100 bg-white py-14">
-        <div className="mx-auto max-w-6xl px-6 text-center">
+      <section className="border-t border-gray-100 bg-white py-16">
+        <div className="container-site text-center">
           <h2 className="mb-4 text-2xl font-bold text-gray-900">
             Follow Us on Instagram
           </h2>

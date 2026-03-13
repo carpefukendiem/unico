@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { NAV_LINKS, CONTACT, SITE, type NavLink } from '@/lib/constants';
 
 // ---------------------------------------------------------------------------
@@ -68,9 +69,14 @@ function ExternalIcon({ className }: { className?: string }) {
 // ---------------------------------------------------------------------------
 // Desktop Nav Item (supports dropdown)
 // ---------------------------------------------------------------------------
-function DesktopNavItem({ link }: { link: NavLink }) {
+function DesktopNavItem({ link, pathname }: { link: NavLink; pathname: string }) {
   const [open, setOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const isActive =
+    link.href !== '#' &&
+    (pathname === link.href ||
+      (link.href !== '/' && pathname.startsWith(link.href)) ||
+      (link.dropdown && link.label === 'Resources' && pathname.startsWith('/resources')));
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -94,7 +100,7 @@ function DesktopNavItem({ link }: { link: NavLink }) {
           aria-expanded={open}
           aria-haspopup="true"
           onClick={() => setOpen(!open)}
-          className="nav-link relative flex items-center gap-1 px-3 py-2 text-[0.8rem] font-medium uppercase tracking-[0.1em] text-white/75 transition-colors hover:text-white"
+          className={`nav-link relative flex items-center gap-1 px-3 py-2 text-[0.8rem] font-medium uppercase tracking-[0.1em] transition-colors hover:text-white ${isActive ? 'text-white' : 'text-white/75'}`}
         >
           {link.label}
           <ChevronDownIcon className={`h-3.5 w-3.5 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
@@ -139,7 +145,7 @@ function DesktopNavItem({ link }: { link: NavLink }) {
     <Tag
       href={link.href}
       {...externalProps}
-      className="nav-link relative px-3 py-2 text-[0.8rem] font-medium uppercase tracking-[0.1em] text-white/75 transition-colors hover:text-white"
+      className={`nav-link relative px-3 py-2 text-[0.8rem] font-medium uppercase tracking-[0.1em] transition-colors hover:text-white ${isActive ? 'text-white' : 'text-white/75'}`}
     >
       {link.label}
     </Tag>
@@ -149,7 +155,12 @@ function DesktopNavItem({ link }: { link: NavLink }) {
 // ---------------------------------------------------------------------------
 // Header Component
 // ---------------------------------------------------------------------------
-export default function Header() {
+interface HeaderProps {
+  topOffset?: number;
+}
+
+export default function Header({ topOffset = 0 }: HeaderProps) {
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
@@ -173,11 +184,12 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'bg-primary-dark/95 shadow-lg shadow-black/20 backdrop-blur-md'
           : 'bg-gradient-to-b from-black/50 to-transparent'
       }`}
+      style={{ top: topOffset }}
     >
       <div className="container-site">
         <nav
@@ -210,7 +222,7 @@ export default function Header() {
           {/* Desktop Nav Links */}
           <div className="hidden items-center gap-0.5 lg:flex">
             {NAV_LINKS.map((link) => (
-              <DesktopNavItem key={link.label} link={link} />
+              <DesktopNavItem key={link.label} link={link} pathname={pathname} />
             ))}
           </div>
 
@@ -286,13 +298,18 @@ export default function Header() {
           <nav className="flex-1 px-5 py-6" aria-label="Mobile navigation">
             <ul className="space-y-1">
               {NAV_LINKS.map((link) => {
+                const isActive =
+                  link.href !== '#' &&
+                  (pathname === link.href ||
+                    (link.href !== '/' && pathname.startsWith(link.href)) ||
+                    (link.dropdown && link.label === 'Resources' && pathname.startsWith('/resources')));
                 if (link.dropdown) {
                   return (
                     <li key={link.label}>
                       <button
                         type="button"
                         onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
-                        className="flex w-full items-center justify-between rounded-lg px-4 py-3 text-[0.9rem] font-medium uppercase tracking-wide text-white/90 transition-colors hover:bg-white/5 hover:text-white"
+                        className={`flex w-full items-center justify-between rounded-lg px-4 py-3 text-[0.9rem] font-medium uppercase tracking-wide transition-colors hover:bg-white/5 hover:text-white ${isActive ? 'bg-white/10 text-white' : 'text-white/90'}`}
                         aria-expanded={mobileResourcesOpen}
                       >
                         {link.label}
@@ -341,7 +358,7 @@ export default function Header() {
                     <Tag
                       href={link.href}
                       {...externalProps}
-                      className="flex items-center rounded-lg px-4 py-3 text-[0.9rem] font-medium uppercase tracking-wide text-white/90 transition-colors hover:bg-white/5 hover:text-white"
+                      className={`flex items-center rounded-lg px-4 py-3 text-[0.9rem] font-medium uppercase tracking-wide transition-colors hover:bg-white/5 hover:text-white ${isActive ? 'bg-white/10 text-white' : 'text-white/90'}`}
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {link.label}

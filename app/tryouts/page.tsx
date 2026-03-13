@@ -163,6 +163,25 @@ export default function TryoutsPage() {
             Reach out to learn about upcoming tryout dates and secure your spot.
             We look forward to seeing you on the field.
           </p>
+          <div className="mx-auto mt-10 max-w-2xl rounded-2xl border border-white/20 bg-white/5 p-6 text-left backdrop-blur-sm">
+            <h3 className="mb-4 font-heading text-lg font-bold uppercase tracking-wide text-white">
+              What to do next
+            </h3>
+            <ol className="space-y-3 text-white/90">
+              <li className="flex gap-3">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/20 font-bold text-white">1</span>
+                <span>Register or create an account in our portal.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/20 font-bold text-white">2</span>
+                <span>Come to tryouts on the dates above with cleats, shin guards, and water.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/20 font-bold text-white">3</span>
+                <span>We&apos;ll follow up with results and next steps.</span>
+              </li>
+            </ol>
+          </div>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/contact"
@@ -171,7 +190,7 @@ export default function TryoutsPage() {
               Contact Us to Register
             </Link>
             <a
-              href={`tel:${CONTACT.phoneHref}`}
+              href={CONTACT.phoneHref}
               className="inline-flex items-center rounded-full border-2 border-white/30 px-8 py-3 font-semibold text-white transition hover:border-white hover:bg-white/10"
             >
               Call {CONTACT.phone}

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { COACHES } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -19,18 +18,9 @@ export default function CoachesPage() {
   return (
     <main className="min-h-screen bg-[#F8F9FC]">
       {/* Hero Section */}
-      <section className="relative bg-[#0F2461] py-20 text-white">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0F2461] via-[#1B3A8C] to-[#0F2461]" />
-        <div className="relative mx-auto max-w-6xl px-6">
-          {/* Breadcrumb */}
-          <nav className="mb-8 flex items-center gap-2 text-sm text-blue-200">
-            <Link href="/" className="transition-colors hover:text-white">
-              Home
-            </Link>
-            <span>/</span>
-            <span className="text-white">Coaches</span>
-          </nav>
-
+      <section className="relative bg-primary-dark py-24 text-white">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary to-primary-dark" />
+        <div className="container-site relative">
           <h1 className="text-5xl font-extrabold tracking-tight md:text-6xl">
             COACHES
           </h1>
@@ -41,7 +31,7 @@ export default function CoachesPage() {
       </section>
 
       {/* Description Section */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="container-site py-24">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-lg leading-relaxed text-gray-600">
             To help our players achieve their goals, knowledgeable and highly
@@ -54,7 +44,7 @@ export default function CoachesPage() {
       </section>
 
       {/* Coaches Grid - 4 cols large, 1 col mobile; larger cards like live site */}
-      <section className="mx-auto max-w-[1400px] px-6 pb-20">
+      <section className="container-site pb-24">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {COACHES.map((coach) => {
             const isPlaceholder = coach.image.includes("unico-logo");

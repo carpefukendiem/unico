@@ -33,6 +33,7 @@ export default function LeadForm({
 }: LeadFormProps) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [mountTime, setMountTime] = useState<number>(0);
 
   useEffect(() => {
@@ -41,6 +42,7 @@ export default function LeadForm({
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setSubmitError(null);
     setLoading(true);
 
     const form = e.currentTarget;
@@ -48,7 +50,6 @@ export default function LeadForm({
 
     const honeypot = formData.get("_hp") as string;
     if (honeypot) {
-      // Bot detected
       setLoading(false);
       return;
     }
@@ -64,13 +65,20 @@ export default function LeadForm({
     };
 
     try {
-      await fetch("/api/contact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setSubmitError(data?.message || "Something went wrong. Please try again.");
+        setLoading(false);
+        return;
+      }
       router.push("/thank-you");
     } catch {
+      setSubmitError("Unable to send message. Please check your connection and try again.");
       setLoading(false);
     }
   }
@@ -121,9 +129,14 @@ export default function LeadForm({
             name="email"
             type="email"
             required
+            autoComplete="email"
             placeholder="your@email.com"
             className={inputClasses}
+            aria-describedby="email-hint"
           />
+          <p id="email-hint" className="sr-only">
+            We&apos;ll use this to reply to your message.
+          </p>
         </div>
 
         <div>
@@ -179,6 +192,16 @@ export default function LeadForm({
             className={inputClasses + " resize-none"}
           />
         </div>
+
+        {submitError && (
+          <div
+            role="alert"
+            className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
+            aria-live="polite"
+          >
+            {submitError}
+          </div>
+        )}
 
         <button
           type="submit"

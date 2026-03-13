@@ -33,20 +33,6 @@ function HeroBanner() {
 
       {/* Content */}
       <div className="container-site relative z-10 pb-12 md:pb-16">
-        {/* Breadcrumb */}
-        <nav className="mb-4 flex items-center gap-2 text-sm text-white/60">
-          <Link
-            href="/"
-            className="transition-colors hover:text-white"
-          >
-            Home
-          </Link>
-          <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-          <span className="text-white">About</span>
-        </nav>
-
         <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
           ABOUT
         </h1>
@@ -280,51 +266,48 @@ function HistoryTimeline() {
           {/* Center line */}
           <div className="timeline-line" />
 
-          <div className="space-y-16">
+          <div className="space-y-20">
             {timeline.map((item, index) => {
               const isLeft = index % 2 === 0;
               return (
                 <div
                   key={item.year}
-                  className="relative"
+                  className="relative flex flex-col md:grid md:grid-cols-2 md:gap-12"
                 >
                   {/* Desktop layout */}
-                  <div className="hidden md:grid md:grid-cols-2 md:gap-12">
-                    {/* Left content */}
-                    <div
-                      className={`${
-                        isLeft ? "pr-12 text-right" : "order-2 pl-12"
-                      }`}
-                    >
-                      <span className="text-5xl font-extrabold text-primary-light">
-                        {item.year}
-                      </span>
-                      <h3 className="mt-2 text-xl font-bold text-primary-dark">
-                        {item.title}
-                      </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-dark-muted/80">
-                        {item.description}
-                      </p>
-                    </div>
-
-                    {/* Right spacer */}
-                    <div className={isLeft ? "order-2" : ""} />
-                  </div>
-
-                  {/* Mobile layout */}
-                  <div className="pl-12 md:hidden">
-                    <span className="text-4xl font-extrabold text-primary-light">
+                  <div
+                    className={`hidden md:block ${
+                      isLeft ? "pr-12 text-right" : "order-2 pl-12 text-left"
+                    }`}
+                  >
+                    <span className="inline-block rounded-full bg-primary-light/15 px-5 py-2 font-heading text-2xl font-bold text-primary-dark">
                       {item.year}
                     </span>
-                    <h3 className="mt-2 text-lg font-bold text-primary-dark">
+                    <h3 className="mt-4 text-xl font-bold text-primary-dark">
                       {item.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-dark-muted/80">
+                    <p className="mt-3 text-base leading-relaxed text-dark-muted/80">
                       {item.description}
                     </p>
                   </div>
 
-                  {/* Center dot */}
+                  {/* Mobile layout */}
+                  <div className="pl-12 md:hidden">
+                    <span className="inline-block rounded-full bg-primary-light/15 px-4 py-1.5 font-heading text-lg font-bold text-primary-dark">
+                      {item.year}
+                    </span>
+                    <h3 className="mt-3 text-lg font-bold text-primary-dark">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-dark-muted/80">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  {/* Spacer for desktop */}
+                  <div className={isLeft ? "order-2 hidden md:block" : "hidden md:block"} />
+
+                  {/* Center dot - desktop */}
                   <div className="absolute left-1/2 top-2 hidden h-5 w-5 -translate-x-1/2 md:block">
                     <div className="h-full w-full rounded-full border-4 border-white bg-primary-light shadow-md" />
                   </div>
@@ -355,6 +338,7 @@ function AboutCTA() {
         fill
         className="object-cover"
         sizes="100vw"
+        fetchPriority="low"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/90 to-primary/80" />
 

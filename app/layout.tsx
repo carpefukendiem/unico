@@ -2,8 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Oswald, Inter } from 'next/font/google';
 import { SITE, CONTACT } from '@/lib/constants';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import LayoutClient from '@/components/LayoutClient';
 import './globals.css';
 
 // ---------------------------------------------------------------------------
@@ -102,9 +101,7 @@ export default function RootLayout({
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
-        <Header />
-        <main id="main-content">{children}</main>
-        <Footer />
+        <LayoutClient>{children}</LayoutClient>
 
         {/* GHL Chat Widget — must use next/script so it loads properly */}
         <Script

@@ -160,6 +160,25 @@ export default function CampsPage() {
             Spots fill up fast! Contact us to learn more about our summer camp
             programs and secure your player&apos;s spot.
           </p>
+          <div className="mx-auto mt-10 max-w-2xl rounded-2xl border border-white/20 bg-white/5 p-6 text-left backdrop-blur-sm">
+            <h3 className="mb-4 font-heading text-lg font-bold uppercase tracking-wide text-white">
+              What to do next
+            </h3>
+            <ol className="space-y-3 text-white/90">
+              <li className="flex gap-3">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/20 font-bold text-white">1</span>
+                <span>Choose your camp session and dates.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/20 font-bold text-white">2</span>
+                <span>Register online or contact us to secure your spot.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/20 font-bold text-white">3</span>
+                <span>Show up ready to train — bring cleats, shin guards, water, and a ball.</span>
+              </li>
+            </ol>
+          </div>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/contact"
@@ -168,7 +187,7 @@ export default function CampsPage() {
               Contact Us
             </Link>
             <a
-              href={`tel:${CONTACT.phoneHref}`}
+              href={CONTACT.phoneHref}
               className="inline-flex items-center rounded-full border-2 border-white/30 px-8 py-3 font-semibold text-white transition hover:border-white hover:bg-white/10"
             >
               Call {CONTACT.phone}
