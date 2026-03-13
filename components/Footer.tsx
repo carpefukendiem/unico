@@ -83,7 +83,7 @@ function ArrowRightIcon({ className }: { className?: string }) {
 // Quick Links for footer
 // ---------------------------------------------------------------------------
 const QUICK_LINKS = NAV_LINKS.filter(
-  (link) => !link.dropdown && ['About', 'Programs', 'Coaches', 'Try Outs', 'Contact'].includes(link.label)
+  (link) => !link.dropdown && ['About', 'Programs', 'Coaches', 'Gallery', 'Try Outs', 'Contact'].includes(link.label)
 );
 
 // ---------------------------------------------------------------------------
@@ -102,7 +102,7 @@ export default function Footer() {
         <div className="absolute inset-0" aria-hidden="true">
           <div className="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-primary-light/10 blur-3xl" />
           <div className="absolute -bottom-20 -right-20 h-72 w-72 rounded-full bg-primary-light/10 blur-3xl" />
-          <div className="absolute inset-0 bg-[url('/images/hero-1.jpg')] bg-cover bg-center opacity-[0.05]" />
+          <div className="absolute inset-0 bg-[url('/images/unico-fc-santa-barbara-youth-soccer-club.jpg')] bg-cover bg-center opacity-[0.05]" aria-hidden="true" />
         </div>
 
         <div className="container-site relative text-center">

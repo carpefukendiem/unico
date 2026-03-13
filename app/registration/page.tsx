@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { SITE, CONTACT, EXTERNAL_LINKS } from "@/lib/constants"
+import { SITE, CONTACT, EXTERNAL_LINKS, SECTION_IMAGES } from "@/lib/constants"
 
 export const metadata: Metadata = {
   title: `Registration | ${SITE.nameAccented}`,
@@ -81,7 +81,7 @@ export default function RegistrationPage() {
       <section className="relative flex min-h-[50vh] items-center justify-center overflow-hidden bg-primary-dark">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-          style={{ backgroundImage: "url('/images/team-champs.jpg')" }}
+          style={{ backgroundImage: `url('${SECTION_IMAGES.registrationHero}')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/80 to-primary/60" />
         <div className="relative z-10 px-6 py-24 text-center">
@@ -213,7 +213,6 @@ export default function RegistrationPage() {
       {/* ----------------------------------------------------------------- */}
       <section className="bg-surface py-16">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="text-lg text-gray-600">
           <div className="mx-auto mt-10 max-w-2xl rounded-2xl border border-white/20 bg-white/5 p-6 text-left backdrop-blur-sm">
             <h3 className="mb-4 font-heading text-lg font-bold uppercase tracking-wide text-white">
               What to do next

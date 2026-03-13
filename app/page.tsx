@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { CONTACT } from "@/lib/constants";
+import { CONTACT, GALLERY_IMAGES, HERO_IMAGES, SECTION_IMAGES } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Unico Futbol Club | Santa Barbara Youth Soccer",
@@ -32,8 +32,8 @@ function HeroSection() {
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
       {/* Background image */}
       <Image
-        src="/images/hero-1.jpg"
-        alt="Unico FC players on the field"
+        src={HERO_IMAGES.homepage}
+        alt="Único FC players on the field"
         fill
         priority
         className="object-cover"
@@ -101,11 +101,14 @@ const HERO_VIDEO_SRC =
 
 function HeroVideoSection() {
   return (
-    <section className="relative overflow-hidden bg-primary-dark" aria-label="Club video">
-      <div className="container-site py-16 md:py-24">
-        <div className="relative mx-auto aspect-video max-w-4xl overflow-hidden rounded-2xl shadow-2xl ring-2 ring-white/10">
+    <section className="relative overflow-hidden bg-primary-dark py-16 md:py-24" aria-label="Club video">
+      <div className="container-site">
+        <h2 className="mb-8 text-center font-heading text-2xl font-bold uppercase tracking-wide text-white md:text-3xl">
+          See Único in action
+        </h2>
+        <div className="relative mx-auto aspect-video min-h-[280px] max-w-4xl overflow-hidden rounded-2xl bg-black/40 shadow-2xl ring-2 ring-white/10">
           <video
-            preload="none"
+            preload="auto"
             autoPlay
             loop
             playsInline
@@ -133,8 +136,8 @@ function AboutPreview() {
           <div className="relative mx-auto w-full max-w-lg lg:mx-0">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl">
               <Image
-                src="/images/team-action.jpg"
-                alt="Unico FC players in action"
+                src={SECTION_IMAGES.teamAction}
+                alt="Único FC players in action"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -142,8 +145,8 @@ function AboutPreview() {
             </div>
             <div className="absolute -bottom-8 -right-4 aspect-[4/3] w-3/5 overflow-hidden rounded-2xl border-4 border-white shadow-xl sm:-right-8">
               <Image
-                src="/images/team-celebrate.jpg"
-                alt="Unico FC team celebration"
+                src={SECTION_IMAGES.teamCelebrate}
+                alt="Único FC team celebration"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 60vw, 30vw"
@@ -364,14 +367,6 @@ function StatsBar() {
 /* ------------------------------------------------------------------ */
 /*  GALLERY                                                            */
 /* ------------------------------------------------------------------ */
-const galleryImages = [
-  { src: "/images/gallery-1.jpg", alt: "Unico FC players in action" },
-  { src: "/images/gallery-2.jpg", alt: "Unico FC team on the pitch" },
-  { src: "/images/gallery-3.jpg", alt: "Unico FC training session" },
-  { src: "/images/gallery-4.jpg", alt: "Unico FC match day" },
-  { src: "/images/gallery-5.jpg", alt: "Unico FC team celebration" },
-];
-
 function GallerySection() {
   return (
     <section className="bg-white py-24 lg:py-32">
@@ -389,7 +384,7 @@ function GallerySection() {
 
         {/* Masonry grid */}
         <div className="gallery-masonry mt-16">
-          {galleryImages.map((img) => (
+          {GALLERY_IMAGES.slice(0, 5).map((img) => (
             <div
               key={img.src}
               className="group relative overflow-hidden rounded-xl"
@@ -405,6 +400,17 @@ function GallerySection() {
             </div>
           ))}
         </div>
+        <div className="mt-12 text-center">
+          <Link
+            href="/gallery"
+            className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-primary transition-colors hover:text-primary-dark"
+          >
+            View full gallery
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </div>
       </div>
     </section>
   );
@@ -418,8 +424,8 @@ function CTASection() {
     <section className="relative py-32 lg:py-40">
       {/* Background image */}
       <Image
-        src="/images/hero-2.jpg"
-        alt="Soccer field at sunset"
+        src={HERO_IMAGES.homepageCta}
+        alt="Soccer field and coaching"
         fill
         className="object-cover"
         sizes="100vw"

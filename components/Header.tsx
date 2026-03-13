@@ -160,7 +160,7 @@ interface HeaderProps {
 }
 
 export default function Header({ topOffset = 0 }: HeaderProps) {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? '/';
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);

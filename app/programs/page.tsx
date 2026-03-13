@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { SITE, CONTACT, EXTERNAL_LINKS } from '@/lib/constants';
+import { SITE, CONTACT, EXTERNAL_LINKS, SECTION_IMAGES, PROGRAM_IMAGES } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: `Programs | ${SITE.nameAccented}`,
@@ -26,7 +26,7 @@ const programs = [
       'Age-appropriate development curriculum',
       'Boys and girls teams from U8 to U19',
     ],
-    image: '/images/gallery-6.jpg',
+    image: PROGRAM_IMAGES.competitive,
     cta: { label: 'Try Out for a Team', href: '/tryouts' },
   },
   {
@@ -41,7 +41,7 @@ const programs = [
       'Character building and teamwork',
       'All skill levels welcome',
     ],
-    image: '/images/gallery-7.jpg',
+    image: PROGRAM_IMAGES.camps,
     cta: { label: 'Learn About Camps', href: '/camps' },
   },
   {
@@ -56,7 +56,7 @@ const programs = [
       'Physical conditioning programs',
       'Mental performance coaching',
     ],
-    image: '/images/gallery-8.jpg',
+    image: PROGRAM_IMAGES.development,
     cta: { label: 'Contact Us', href: '/contact' },
   },
 ];
@@ -67,7 +67,7 @@ export default function ProgramsPage() {
       {/* Hero */}
       <section className="relative flex min-h-[50vh] items-center justify-center overflow-hidden bg-primary-dark">
         <Image
-          src="/images/team-group.jpg"
+          src={SECTION_IMAGES.teamGroup}
           alt="Único FC training session"
           fill
           priority
@@ -175,7 +175,7 @@ export default function ProgramsPage() {
       {/* Registration CTA */}
       <section className="relative py-24">
         <Image
-          src="/images/team-celebrate.jpg"
+          src={SECTION_IMAGES.teamCelebrate}
           alt="Único FC celebrating together"
           fill
           className="object-cover"

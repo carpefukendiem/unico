@@ -75,6 +75,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'Camps', href: '/camps' },
   { label: 'Try Outs', href: '/tryouts' },
   { label: 'Registration', href: '/registration' },
+  { label: 'Gallery', href: '/gallery' },
   {
     label: 'Resources',
     href: '#',
@@ -88,6 +89,58 @@ export const NAV_LINKS: NavLink[] = [
   },
   { label: 'Contact', href: '/contact' },
 ] as const;
+
+// ---------------------------------------------------------------------------
+// Hero & section images (used across homepage, about, programs, tryouts, camps, registration)
+// ---------------------------------------------------------------------------
+export const HERO_IMAGES = {
+  homepage: '/images/unico-fc-santa-barbara-youth-soccer-club.jpg',
+  homepageCta: '/images/unico-fc-santa-barbara-soccer-field-coaching.jpg',
+  aboutTop: '/images/unico-fc-santa-barbara-players-team-huddle.jpg',
+  aboutCta: '/images/unico-fc-santa-barbara-youth-goalkeeper.jpg',
+  footerBg: '/images/unico-fc-santa-barbara-youth-soccer-club.jpg',
+} as const;
+
+export const SECTION_IMAGES = {
+  teamAction: '/images/unico-fc-santa-barbara-youth-player-action.jpg',
+  teamCelebrate: '/images/unico-fc-santa-barbara-girls-team-celebration.jpg',
+  teamGroup: '/images/unico-fc-santa-barbara-boys-team-photo.jpg',
+  teamHuddle: '/images/unico-fc-santa-barbara-players-team-huddle.jpg',
+  teamField: '/images/unico-fc-santa-barbara-soccer-field-coaching.jpg',
+  teamChamps: '/images/unico-fc-santa-barbara-state-cup-champions-team.jpg',
+  campsHero: '/images/unico-fc-santa-barbara-team-beach-day.jpg',
+  registrationHero: '/images/unico-fc-santa-barbara-national-cup-champions.jpg',
+} as const;
+
+/** Program card images (competitive teams, summer camps, player development) */
+export const PROGRAM_IMAGES = {
+  competitive: '/images/unico-fc-santa-barbara-competitive-youth-player.jpg',
+  camps: '/images/unico-fc-santa-barbara-youth-soccer-training.jpg',
+  development: '/images/unico-fc-santa-barbara-player-coach-handshake.jpg',
+} as const;
+
+// ---------------------------------------------------------------------------
+// Gallery (shared between homepage and /gallery)
+// ---------------------------------------------------------------------------
+export interface GalleryImage {
+  src: string;
+  alt: string;
+}
+
+export const GALLERY_IMAGES: GalleryImage[] = [
+  { src: '/images/unico-fc-santa-barbara-girls-team-celebration.jpg', alt: 'Único FC Santa Barbara girls team celebrating with medals' },
+  { src: '/images/unico-fc-santa-barbara-girls-soccer-players.jpg', alt: 'Único FC Santa Barbara girls soccer players on the pitch' },
+  { src: '/images/unico-fc-santa-barbara-player-coach-handshake.jpg', alt: 'Único FC Santa Barbara player and coach handshake' },
+  { src: '/images/unico-fc-santa-barbara-youth-player-action.jpg', alt: 'Único FC Santa Barbara youth player in action with ball' },
+  { src: '/images/unico-fc-santa-barbara-youth-goalkeeper-match.jpg', alt: 'Único FC Santa Barbara youth goalkeeper during match' },
+  { src: '/images/unico-fc-santa-barbara-boys-national-cup-team.jpg', alt: 'Único FC Santa Barbara boys team at National Cup' },
+  { src: '/images/unico-fc-santa-barbara-competitive-youth-player.jpg', alt: 'Único FC Santa Barbara competitive youth soccer player' },
+  { src: '/images/unico-fc-santa-barbara-sportsmanship-field.jpg', alt: 'Único FC Santa Barbara youth soccer sportsmanship' },
+  { src: '/images/unico-fc-santa-barbara-youth-soccer-training.jpg', alt: 'Único FC Santa Barbara youth soccer training' },
+  { src: '/images/unico-fc-santa-barbara-national-cup-champions.jpg', alt: 'Único FC Santa Barbara National Cup champions' },
+  { src: '/images/unico-fc-santa-barbara-girls-soccer-state-cup.jpg', alt: 'Único FC Santa Barbara girls soccer State Cup' },
+  { src: '/images/unico-fc-santa-barbara-team-beach-day.jpg', alt: 'Único FC Santa Barbara team beach day' },
+];
 
 // ---------------------------------------------------------------------------
 // Coaches

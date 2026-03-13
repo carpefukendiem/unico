@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { HERO_IMAGES } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "About | Unico Futbol Club",
@@ -22,8 +23,8 @@ function HeroBanner() {
     <section className="relative flex h-72 items-end overflow-hidden sm:h-80 md:h-96">
       {/* Background */}
       <Image
-        src="/images/hero-4.jpg"
-        alt="Unico FC team on the field"
+        src={HERO_IMAGES.aboutTop}
+        alt="Único FC team on the field"
         fill
         priority
         className="object-cover"
@@ -333,8 +334,8 @@ function AboutCTA() {
     <section className="relative py-28 lg:py-36">
       {/* Background */}
       <Image
-        src="/images/hero-3.jpg"
-        alt="Unico FC players"
+        src={HERO_IMAGES.aboutCta}
+        alt="Único FC goalkeeper and players"
         fill
         className="object-cover"
         sizes="100vw"

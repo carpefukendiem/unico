@@ -34,7 +34,7 @@ export default function LayoutClient({
   return (
     <>
       <TopBar visible={showTopBar} onClose={handleCloseTopBar} />
-      <Header topOffset={showTopBar ? 48 : 0} />
+      <Header topOffset={showTopBar ? 47 : 0} />
       <main
         id="main-content"
         className={showTopBar ? 'pt-12' : ''}

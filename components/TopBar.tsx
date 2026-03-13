@@ -14,16 +14,15 @@ export default function TopBar({ visible, onClose }: TopBarProps) {
   return (
     <div
       role="banner"
-      className="fixed left-0 right-0 top-0 z-[60] flex items-center justify-center bg-amber-400 px-12 py-3 text-center text-sm font-semibold text-amber-950 sm:px-16"
-      style={{ backgroundColor: '#F59E0B', color: '#451A03' }}
+      className="fixed left-0 right-0 top-0 z-[60] flex h-12 flex-shrink-0 items-center justify-center px-12 text-center text-sm font-semibold text-white sm:px-16"
+      style={{ backgroundColor: '#4A90E2' }}
     >
       <p className="pr-10 sm:pr-12">{BANNER_TEXT}</p>
       <button
         type="button"
         onClick={onClose}
-        className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full text-amber-950/80 transition-colors hover:bg-amber-500/30 hover:text-amber-950 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:ring-offset-2 focus:ring-offset-amber-400 sm:right-4"
+        className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full text-white/90 transition-colors hover:bg-white/20 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#4A90E2] sm:right-4"
         aria-label="Close announcement"
-        onClick={onClose}
       >
         <svg
           className="h-5 w-5"
