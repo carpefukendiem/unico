@@ -94,7 +94,7 @@ export const NAV_LINKS: NavLink[] = [
 // Hero & section images (used across homepage, about, programs, tryouts, camps, registration)
 // ---------------------------------------------------------------------------
 export const HERO_IMAGES = {
-  homepage: '/images/unico-fc-santa-barbara-youth-soccer-club.jpg',
+  homepage: '/images/hero-1.jpg',
   homepageCta: '/images/unico-fc-santa-barbara-soccer-field-coaching.jpg',
   aboutTop: '/images/unico-fc-santa-barbara-players-team-huddle.jpg',
   aboutCta: '/images/unico-fc-santa-barbara-youth-goalkeeper.jpg',
