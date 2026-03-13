@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { SITE, CONTACT } from "@/lib/constants"
+import { SITE, CONTACT, EXTERNAL_LINKS } from "@/lib/constants"
 
 export const metadata: Metadata = {
   title: `Registration | ${SITE.nameAccented}`,
@@ -15,9 +15,9 @@ export const metadata: Metadata = {
 const steps = [
   {
     step: "1",
-    title: "Create a GotSport Account",
+    title: "Create an Account",
     description:
-      "Visit the GotSport registration portal and create a parent/guardian account if you don't already have one.",
+      "Visit our registration portal on StackSports and create a parent/guardian account if you don't already have one.",
   },
   {
     step: "2",
@@ -68,7 +68,7 @@ const faqs = [
   {
     question: "What if I need to withdraw after registering?",
     answer:
-      "Refund policies vary by timing and program. Please refer to the parent/player agreement or reach out to our staff for details.",
+      "Refund policies vary by timing and program. Please refer to the parent/player agreement at /resources/parent-player-agreement or reach out to our staff for details.",
   },
 ]
 
@@ -81,7 +81,7 @@ export default function RegistrationPage() {
       <section className="relative flex min-h-[50vh] items-center justify-center overflow-hidden bg-primary-dark">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-          style={{ backgroundImage: "url('/images/team-group.jpg')" }}
+          style={{ backgroundImage: "url('/images/team-champs.jpg')" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/80 to-primary/60" />
         <div className="relative z-10 px-6 py-24 text-center">
@@ -108,7 +108,7 @@ export default function RegistrationPage() {
           </h2>
           <div className="mx-auto mt-3 h-1 w-16 rounded bg-primary-light" />
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
-            Registration for {SITE.nameAccented} is handled through GotSport,
+            Registration for {SITE.nameAccented} is handled through StackSports,
             our official registration platform. Follow the steps below to get
             your player signed up and ready for the season.
           </p>
@@ -145,16 +145,16 @@ export default function RegistrationPage() {
       <section className="bg-primary-dark py-16">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <h2 className="text-3xl font-bold text-white md:text-4xl">
-            Register Now on GotSport
+            Register Now on StackSports
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-white/80">
             Click below to go directly to our registration portal. You&apos;ll
-            need to create or log in to your GotSport account to complete
+            need to create or log in to your StackSports account to complete
             registration.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
-              href="https://system.gotsport.com/programs/593K68654?reg_role=player"
+              href={EXTERNAL_LINKS.registration}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3 font-semibold text-primary-dark transition hover:bg-blue-100"

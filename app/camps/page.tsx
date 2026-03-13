@@ -62,7 +62,7 @@ export default function CampsPage() {
       <section className="relative flex min-h-[50vh] items-center justify-center overflow-hidden bg-primary-dark">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-          style={{ backgroundImage: "url('/images/team-action.jpg')" }}
+          style={{ backgroundImage: "url('/images/team-field.jpg')" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/80 to-primary/60" />
         <div className="relative z-10 px-6 py-24 text-center">

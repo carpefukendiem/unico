@@ -53,50 +53,83 @@ export default function CoachesPage() {
         </div>
       </section>
 
-      {/* Coaches Grid */}
-      <section className="mx-auto max-w-6xl px-6 pb-20">
-        <div className="grid gap-6 md:grid-cols-2">
-          {COACHES.map((coach) => (
-            <article
-              key={coach.name}
-              className="group flex overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-            >
-              {/* Photo */}
-              <div className="relative h-auto w-40 flex-shrink-0 overflow-hidden sm:w-48">
-                <Image
-                  src={coach.image}
-                  alt={coach.name}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  sizes="(max-width: 640px) 160px, 192px"
-                />
-              </div>
+      {/* Coaches Grid - 4 cols large, 1 col mobile; larger cards like live site */}
+      <section className="mx-auto max-w-[1400px] px-6 pb-20">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {COACHES.map((coach) => {
+            const isPlaceholder = coach.image.includes("unico-logo");
+            return (
+              <article
+                key={coach.name}
+                className="group overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              >
+                {/* Photo - larger portrait proportion */}
+                <div
+                  className={`relative aspect-[3/4] w-full overflow-hidden ${
+                    isPlaceholder ? "bg-[#0F2461]" : ""
+                  }`}
+                >
+                  <Image
+                    src={coach.image}
+                    alt={coach.name}
+                    fill
+                    className={`transition-transform duration-300 group-hover:scale-105 ${
+                      isPlaceholder
+                        ? "object-contain p-10"
+                        : "object-cover object-top"
+                    }`}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                  />
+                </div>
 
-              {/* Info */}
-              <div className="flex flex-col justify-center p-5 sm:p-6">
-                <span className="mb-1 text-xs font-semibold uppercase tracking-wider text-[#1B3A8C]">
-                  {coach.role}
-                </span>
+                {/* Info */}
+                <div className="p-6">
+                  {/* Role */}
+                  <p className="text-sm font-semibold uppercase tracking-wider text-[#1B3A8C]">
+                    {coach.role}
+                  </p>
 
-                {coach.teams && coach.teams.length > 0 && (
-                  <div className="mb-2 flex flex-wrap gap-1.5">
-                    {coach.teams.map((team) => (
-                      <span
-                        key={team}
-                        className="inline-block rounded-full bg-[#F8F9FC] px-2.5 py-0.5 text-xs font-medium text-gray-600"
+                  {/* Teams */}
+                  {coach.teams && coach.teams.length > 0 && (
+                    <div className="mt-2 flex flex-wrap gap-1.5">
+                      {coach.teams.map((team) => (
+                        <span
+                          key={team}
+                          className="inline-block rounded-full bg-[#F0F2F8] px-2.5 py-0.5 text-xs font-medium text-gray-600"
+                        >
+                          {team}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Name */}
+                  <h2 className="mt-3 text-xl font-bold text-gray-900 md:text-2xl">
+                    {coach.name}
+                  </h2>
+
+                  {/* Email */}
+                  {coach.email && (
+                    <a
+                      href={`mailto:${coach.email}`}
+                      className="mt-2 inline-flex items-center gap-1.5 text-sm text-gray-500 transition-colors hover:text-[#1B3A8C]"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="h-4 w-4"
                       >
-                        {team}
-                      </span>
-                    ))}
-                  </div>
-                )}
-
-                <h2 className="text-lg font-bold text-gray-900 sm:text-xl">
-                  {coach.name}
-                </h2>
-              </div>
-            </article>
-          ))}
+                        <path d="M3 4a2 2 0 0 0-2 2v1.161l8.441 4.221a1.25 1.25 0 0 0 1.118 0L19 7.162V6a2 2 0 0 0-2-2H3Z" />
+                        <path d="m19 8.839-7.77 3.885a2.75 2.75 0 0 1-2.46 0L1 8.839V14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.839Z" />
+                      </svg>
+                      {coach.email}
+                    </a>
+                  )}
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
     </main>

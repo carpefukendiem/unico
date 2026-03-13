@@ -225,6 +225,24 @@ p {
 }
 
 /* CTA button base style */
+/* Nav link hover underline effect */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary-light), #93B5FF);
+  transition: width 0.3s ease, left 0.3s ease;
+  border-radius: 1px;
+}
+
+.nav-link:hover::after {
+  width: 70%;
+  left: 15%;
+}
+
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -401,3 +419,4 @@ p {
   background: rgba(27, 58, 140, 0.15);
   color: var(--color-primary-dark);
 }
+

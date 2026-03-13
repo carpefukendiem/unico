@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Oswald, Inter } from 'next/font/google';
 import { SITE, CONTACT } from '@/lib/constants';
 import Header from '@/components/Header';
@@ -78,7 +79,7 @@ const jsonLd = {
   },
   sport: 'Soccer',
   sameAs: [CONTACT.instagram.url],
-  logo: `${SITE.url}/images/logo.png`,
+  logo: `${SITE.url}/images/unico-logo.webp`,
 };
 
 // ---------------------------------------------------------------------------
@@ -92,12 +93,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${oswald.variable} ${inter.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -110,6 +105,14 @@ export default function RootLayout({
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
+
+        {/* GHL Chat Widget — must use next/script so it loads properly */}
+        <Script
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="69b2f2b60ec300a774ad843f"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

@@ -22,7 +22,7 @@ function HeroBanner() {
     <section className="relative flex h-72 items-end overflow-hidden sm:h-80 md:h-96">
       {/* Background */}
       <Image
-        src="/images/hero-3.jpg"
+        src="/images/hero-4.jpg"
         alt="Unico FC team on the field"
         fill
         priority
@@ -67,16 +67,16 @@ function ClubInfo() {
           {/* Logo area - 2 cols */}
           <div className="flex items-center justify-center lg:col-span-2">
             <div className="relative">
-              {/* Decorative ring */}
-              <div className="absolute -inset-6 rounded-full border-2 border-dashed border-primary/10" />
-              <div className="absolute -inset-12 rounded-full border border-dashed border-primary-light/10" />
-              <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white bg-white p-4 shadow-2xl sm:h-72 sm:w-72">
+              {/* Decorative elements */}
+              <div className="absolute -inset-6 rounded-3xl border-2 border-dashed border-primary/10" />
+              <div className="absolute -inset-12 rounded-3xl border border-dashed border-primary-light/10" />
+              <div className="relative flex h-56 w-56 items-center justify-center rounded-3xl border border-gray-100 bg-white p-6 shadow-2xl sm:h-72 sm:w-72">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/unico-logo.webp"
                   alt="Unico Futbol Club logo"
-                  fill
-                  className="object-contain p-4"
-                  sizes="288px"
+                  width={200}
+                  height={200}
+                  className="h-auto w-auto max-w-full object-contain drop-shadow-md"
                 />
               </div>
             </div>
@@ -350,7 +350,7 @@ function AboutCTA() {
     <section className="relative py-28 lg:py-36">
       {/* Background */}
       <Image
-        src="/images/hero-4.jpg"
+        src="/images/hero-3.jpg"
         alt="Unico FC players"
         fill
         className="object-cover"

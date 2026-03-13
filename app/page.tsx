@@ -151,7 +151,7 @@ function AboutPreview() {
               href="/about"
               className="group mt-10 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-primary transition-colors hover:text-primary-light"
             >
-              Learn More
+              Learn More About Us
               <svg
                 className="h-4 w-4 transition-transform group-hover:translate-x-1"
                 fill="none"
@@ -188,6 +188,7 @@ const programs = [
       </svg>
     ),
     href: "/programs",
+    linkText: "Explore Programs",
   },
   {
     title: "Summer Camps",
@@ -199,7 +200,8 @@ const programs = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
       </svg>
     ),
-    href: "/programs",
+    href: "/camps",
+    linkText: "View Camps",
   },
   {
     title: "Try Outs",
@@ -212,6 +214,7 @@ const programs = [
       </svg>
     ),
     href: "/tryouts",
+    linkText: "View Tryout Dates",
   },
 ];
 
@@ -259,7 +262,7 @@ function ProgramsSection() {
                   href={program.href}
                   className="group/link mt-6 inline-flex items-center gap-1.5 text-sm font-bold uppercase tracking-wider text-primary transition-colors hover:text-primary-light"
                 >
-                  Learn More
+                  {program.linkText}
                   <svg
                     className="h-4 w-4 transition-transform group-hover/link:translate-x-1"
                     fill="none"
@@ -333,11 +336,11 @@ function StatsBar() {
 /*  GALLERY                                                            */
 /* ------------------------------------------------------------------ */
 const galleryImages = [
-  { src: "/images/team-champs.jpg", alt: "Unico FC team with championship trophies" },
-  { src: "/images/team-group.jpg", alt: "Unico FC team group photo" },
-  { src: "/images/team-field.jpg", alt: "Unico FC players on the field" },
-  { src: "/images/team-celebrate.jpg", alt: "Unico FC celebration" },
-  { src: "/images/team-huddle.jpg", alt: "Unico FC team huddle" },
+  { src: "/images/gallery-1.jpg", alt: "Unico FC players in action" },
+  { src: "/images/gallery-2.jpg", alt: "Unico FC team on the pitch" },
+  { src: "/images/gallery-3.jpg", alt: "Unico FC training session" },
+  { src: "/images/gallery-4.jpg", alt: "Unico FC match day" },
+  { src: "/images/gallery-5.jpg", alt: "Unico FC team celebration" },
 ];
 
 function GallerySection() {
@@ -432,10 +435,10 @@ function SponsorsSection() {
         {/* Heading */}
         <div className="text-center">
           <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary-light">
-            Our Partners
+            Our Affiliations
           </span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-primary-dark sm:text-4xl">
-            THANK YOU FOR THE SUPPORT!
+            PROUDLY AFFILIATED
           </h2>
           <div className="section-divider mx-auto mt-3" />
         </div>

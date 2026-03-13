@@ -42,6 +42,17 @@ export const SITE = {
 } as const;
 
 // ---------------------------------------------------------------------------
+// External Links
+// ---------------------------------------------------------------------------
+export const EXTERNAL_LINKS = {
+  registration:
+    'https://login.stacksports.com/login?client_id=612b0399b1854a002e427f78&redirect_uri=https://core-api.bluesombrero.com/login/redirect/portal/13560&app_name=Unico+FC&portalid=13560&instancekey=leagues&returnurl=https%3a%2f%2fregistration-setup.bluesombrero.com%2fregistration-admin%2f13560%2fsettings%3fpanel%3dBankingInformation',
+  fanGear: 'https://unicofutbolclub.itemorder.com/shop/home/',
+  calSouthODP: 'https://www.calsouth.com/programs/odp/',
+  coachesPortal: 'https://system.gotsport.com/',
+} as const;
+
+// ---------------------------------------------------------------------------
 // Navigation
 // ---------------------------------------------------------------------------
 export interface NavDropdownItem {
@@ -59,44 +70,23 @@ export interface NavLink {
 
 export const NAV_LINKS: NavLink[] = [
   { label: 'About', href: '/about' },
+  { label: 'Programs', href: '/programs' },
   { label: 'Coaches', href: '/coaches' },
-  { label: 'Contact', href: '/contact' },
-  {
-    label: 'Fan Gear',
-    href: 'https://unicofutbolclub.itemorder.com/shop/home/',
-    external: true,
-  },
-  {
-    label: 'Registration',
-    href: 'https://system.gotsport.com/programs/593K68654?reg_role=player',
-    external: true,
-  },
   { label: 'Camps', href: '/camps' },
   { label: 'Try Outs', href: '/tryouts' },
-  {
-    label: 'Cal South ODP',
-    href: 'https://www.calsouth.com/programs/odp/',
-    external: true,
-  },
+  { label: 'Registration', href: '/registration' },
   {
     label: 'Resources',
     href: '#',
     dropdown: [
-      {
-        label: 'Coaches Portal',
-        href: 'https://system.gotsport.com/',
-        external: true,
-      },
-      {
-        label: 'Parent/Player Agreement',
-        href: '/resources/parent-player-agreement',
-      },
-      {
-        label: 'Parent/Training Only Player Agreement',
-        href: '/resources/parent-training-agreement',
-      },
+      { label: 'Parent/Player Agreement', href: '/resources/parent-player-agreement' },
+      { label: 'Parent/Training Agreement', href: '/resources/parent-training-agreement' },
+      { label: 'Fan Gear', href: 'https://unicofutbolclub.itemorder.com/shop/home/', external: true },
+      { label: 'Cal South ODP', href: 'https://www.calsouth.com/programs/odp/', external: true },
+      { label: 'Coaches Portal', href: 'https://system.gotsport.com/', external: true },
     ],
   },
+  { label: 'Contact', href: '/contact' },
 ] as const;
 
 // ---------------------------------------------------------------------------
@@ -107,6 +97,7 @@ export interface Coach {
   role: string;
   teams?: string[];
   image: string;
+  email?: string;
 }
 
 export const COACHES: Coach[] = [
@@ -114,12 +105,14 @@ export const COACHES: Coach[] = [
     name: 'Luis Alcaraz Cuellar',
     role: 'Club President',
     image: '/images/coach-luis.jpg',
+    email: 'lacaraz805@gmail.com',
   },
   {
     name: 'Israel Guerrero',
-    role: 'Director of Coaching - Boys',
+    role: 'Director of Coaching - Boys, Head Coach',
     teams: ['2012 Boys Team'],
     image: '/images/coach-israel.jpg',
+    email: 'izyg96@gmail.com',
   },
   {
     name: 'Jose Aguilar',
@@ -132,12 +125,14 @@ export const COACHES: Coach[] = [
     role: 'Head Coach',
     teams: ['2013 Girls Team'],
     image: '/images/coach-lalo.jpg',
+    email: 'lopezsbsc21@aol.com',
   },
   {
     name: 'Francisco Angel De La Luz',
     role: 'Head Coach',
     teams: ['2013 Boys Team', '2017 Boys Team'],
     image: '/images/coach-francisco.jpg',
+    email: 'fangeldelaluz05@gmail.com',
   },
   {
     name: 'Hermes Mares Garcia',
@@ -146,28 +141,63 @@ export const COACHES: Coach[] = [
     image: '/images/coach-hermes.jpg',
   },
   {
+    name: 'Juan Rojas',
+    role: 'Head Coach',
+    teams: ['2016 Boys Team'],
+    image: '/images/coach-juan.jpg',
+    email: 'rojasjuan10@aol.com',
+  },
+  {
     name: 'Victor Cortes',
     role: 'Head Coach',
-    teams: ['2010 Boys Team'],
+    teams: ['2008 Girls Team', '2012 Girls Team'],
     image: '/images/coach-victor-c.jpg',
+    email: 'sacuiro16@gmail.com',
   },
   {
     name: 'Victor Pacheco',
     role: 'Head Coach',
-    teams: ['2014 Boys Team', '2015 Boys Team'],
+    teams: ['2010 Boys Team'],
     image: '/images/coach-victor-p.jpg',
   },
   {
     name: 'Alex Gonzalez',
     role: 'Head Coach',
-    teams: ['2011 Boys Team - White'],
+    teams: ['2014 Boys Team', '2015 Boys Team'],
     image: '/images/coach-alex.jpg',
+    email: 'alexgonz9@gmail.com',
   },
   {
-    name: 'Eddie Buenrostro',
+    name: 'Daniel Torres',
     role: 'Head Coach',
-    teams: ['2008 Girls Team', '2012 Girls Team'],
-    image: '/images/coach-eddie.jpg',
+    teams: ['2011 Boys Team - Blue'],
+    image: '/images/unico-logo.webp',
+  },
+  {
+    name: 'Kurt Smith',
+    role: 'Head Coach',
+    teams: ['2017 Girls Team'],
+    image: '/images/coach-kurt.jpg',
+  },
+  {
+    name: 'Jamie Warm',
+    role: 'Assistant Coach',
+    teams: ['2017 Girls Team'],
+    image: '/images/coach-jamie.jpg',
+    email: 'jamiewarm9@gmail.com',
+  },
+  {
+    name: 'Tim Weyel',
+    role: 'Assistant Coach',
+    teams: ['2011 Boys Team - Blue'],
+    image: '/images/coach-tim.jpg',
+    email: 'tweyel@gmail.com',
+  },
+  {
+    name: 'Omar Montalvo',
+    role: 'Los Pequeñitos Unico',
+    image: '/images/coach-omar.jpg',
+    email: 'montalvo080621@gmail.com',
   },
 ];
 

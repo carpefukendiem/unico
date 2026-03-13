@@ -10,6 +10,8 @@ interface LeadFormProps {
 }
 
 const ageOptions = [
+  "U6",
+  "U7",
   "U8",
   "U9",
   "U10",

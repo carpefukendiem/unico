@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { CONTACT, SITE, NAV_LINKS, AFFILIATES } from '@/lib/constants';
+import { CONTACT, SITE, NAV_LINKS, AFFILIATES, EXTERNAL_LINKS } from '@/lib/constants';
 
 // ---------------------------------------------------------------------------
 // Icons (inline SVGs)
@@ -83,7 +83,7 @@ function ArrowRightIcon({ className }: { className?: string }) {
 // Quick Links for footer
 // ---------------------------------------------------------------------------
 const QUICK_LINKS = NAV_LINKS.filter(
-  (link) => !link.dropdown && ['About', 'Coaches', 'Contact', 'Camps', 'Try Outs'].includes(link.label)
+  (link) => !link.dropdown && ['About', 'Programs', 'Coaches', 'Try Outs', 'Contact'].includes(link.label)
 );
 
 // ---------------------------------------------------------------------------
@@ -120,7 +120,7 @@ export default function Footer() {
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
-              href="https://system.gotsport.com/programs/593K68654?reg_role=player"
+              href={EXTERNAL_LINKS.registration}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary px-8 py-3.5 text-base"
@@ -149,9 +149,9 @@ export default function Footer() {
             {/* Column 1: Club Info */}
             <div className="sm:col-span-2 lg:col-span-1">
               <Link href="/" className="mb-5 flex items-center gap-3">
-                <div className="relative h-14 w-14 shrink-0 overflow-hidden">
+                <div className="relative h-14 w-14 shrink-0">
                   <Image
-                    src="/images/logo.png"
+                    src="/images/unico-logo.webp"
                     alt={`${SITE.nameAccented} crest`}
                     fill
                     sizes="56px"
@@ -208,19 +208,26 @@ export default function Footer() {
                   );
                 })}
                 <li>
-                  <a
-                    href="https://system.gotsport.com/programs/593K68654?reg_role=player"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    href="/camps"
+                    className="inline-flex items-center gap-1.5 text-sm transition-colors hover:text-blue-200"
+                  >
+                    <span className="h-px w-3 bg-white/30" />
+                    Camps
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/registration"
                     className="inline-flex items-center gap-1.5 text-sm transition-colors hover:text-blue-200"
                   >
                     <span className="h-px w-3 bg-white/30" />
                     Registration
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a
-                    href="https://unicofutbolclub.itemorder.com/shop/home/"
+                    href={EXTERNAL_LINKS.fanGear}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-sm transition-colors hover:text-blue-200"
@@ -297,7 +304,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/5">
           <div className="container-site flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
-            <p className="text-xs text-white/40">
+            <p className="text-xs text-white/60">
               &copy; {currentYear} {SITE.nameAccented}. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
@@ -305,7 +312,7 @@ export default function Footer() {
                 href={CONTACT.instagram.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/40 transition-colors hover:text-blue-200"
+                className="text-white/60 transition-colors hover:text-blue-200"
                 aria-label="Instagram"
               >
                 <InstagramIcon className="h-5 w-5" />
