@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import HeroVideo from "@/components/HeroVideo";
 import { CONTACT, GALLERY_IMAGES, HERO_IMAGES, SECTION_IMAGES } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
 /* ------------------------------------------------------------------ */
 function HeroSection() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+    <section className="relative flex min-h-[65vh] items-center justify-center overflow-hidden">
       {/* Background image */}
       <Image
         src={HERO_IMAGES.homepage}
@@ -43,33 +44,33 @@ function HeroSection() {
       {/* Dark gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/80" />
 
-      {/* Content */}
-      <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-6 text-center">
-        <span className="mb-4 inline-block rounded-full border border-white/20 bg-white/10 px-5 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-white/90 backdrop-blur-sm">
+      {/* Content - contained and legible */}
+      <div className="container-site relative z-10 flex flex-col items-center justify-center px-6 py-16 text-center">
+        <span className="mb-3 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white/90 backdrop-blur-sm">
           Santa Barbara, California
         </span>
 
-        <h1 className="text-5xl font-extrabold leading-none tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
+        <h1 className="max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
           <span className="block">&Uacute;NICO</span>
           <span className="block text-gradient-accent">FUTBOL CLUB</span>
         </h1>
 
-        <p className="mt-6 max-w-xl text-lg font-medium text-white/80 sm:text-xl md:text-2xl">
+        <p className="mt-4 max-w-lg text-base font-medium text-white/85 sm:text-lg md:text-xl">
           Santa Barbara&rsquo;s Premier Youth Soccer
         </p>
 
-        <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
-          <Link href="/contact" className="btn-primary h-14 px-8 text-base">
+        <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
+          <Link href="/contact" className="btn-primary h-12 px-6 text-sm">
             Join Our Club
           </Link>
-          <Link href="/programs" className="btn-outline h-14 px-8 text-base">
+          <Link href="/programs" className="btn-outline h-12 px-6 text-sm">
             View Programs
           </Link>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 animate-bounce-slow">
+      <div className="absolute bottom-6 left-1/2 animate-bounce-slow">
         <div className="flex flex-col items-center gap-2">
           <span className="text-xs font-medium uppercase tracking-widest text-white/50">
             Scroll
@@ -96,9 +97,6 @@ function HeroSection() {
 /* ------------------------------------------------------------------ */
 /*  HERO VIDEO                                                         */
 /* ------------------------------------------------------------------ */
-const HERO_VIDEO_SRC =
-  'https://video.wixstatic.com/video/3618d7_6c8e7260b16e4e94a1a5c741949bf7d0/720p/mp4/file.mp4';
-
 function HeroVideoSection() {
   return (
     <section className="relative overflow-hidden bg-primary-dark py-16 md:py-24" aria-label="Club video">
@@ -106,19 +104,7 @@ function HeroVideoSection() {
         <h2 className="mb-8 text-center font-heading text-2xl font-bold uppercase tracking-wide text-white md:text-3xl">
           See Único in action
         </h2>
-        <div className="relative mx-auto aspect-video min-h-[280px] max-w-4xl overflow-hidden rounded-2xl bg-black/40 shadow-2xl ring-2 ring-white/10">
-          <video
-            preload="auto"
-            autoPlay
-            loop
-            playsInline
-            muted
-            className="h-full w-full object-cover"
-            aria-label="Único Futbol Club in action"
-          >
-            <source src={HERO_VIDEO_SRC} type="video/mp4" />
-          </video>
-        </div>
+        <HeroVideo />
       </div>
     </section>
   );

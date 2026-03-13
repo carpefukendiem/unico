@@ -17,7 +17,7 @@ export default function GalleryPage() {
   return (
     <main className="min-h-screen bg-[#F8F9FC]">
       {/* Hero */}
-      <section className="relative bg-primary-dark py-24 text-white">
+      <section className="relative flex min-h-[17rem] flex-col justify-center bg-primary-dark py-16 text-white md:min-h-[20rem] md:py-20">
         <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary to-primary-dark" />
         <div className="container-site relative">
           <h1 className="text-5xl font-extrabold tracking-tight md:text-6xl">

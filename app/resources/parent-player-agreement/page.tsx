@@ -65,9 +65,9 @@ export default function ParentPlayerAgreementPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative flex min-h-[40vh] items-center justify-center overflow-hidden bg-primary-dark">
+      <section className="relative flex min-h-[17rem] items-center justify-center overflow-hidden bg-primary-dark md:min-h-[20rem]">
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark to-primary/80" />
-        <div className="relative z-10 px-6 py-24 text-center">
+        <div className="container-site relative z-10 py-16 text-center md:py-20">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-blue-200">
             {SITE.nameAccented} Resources
           </p>

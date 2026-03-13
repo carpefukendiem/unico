@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 /* ------------------------------------------------------------------ */
 function HeroBanner() {
   return (
-    <section className="relative flex h-72 items-end overflow-hidden sm:h-80 md:h-96">
+    <section className="relative flex min-h-[17rem] items-end overflow-hidden md:min-h-[20rem]">
       {/* Background */}
       <Image
         src={HERO_IMAGES.aboutTop}
