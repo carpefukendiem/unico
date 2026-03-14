@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import { Oswald, Inter } from 'next/font/google';
 import { SITE, CONTACT } from '@/lib/constants';
 import LayoutClient from '@/components/LayoutClient';
+import GHLWidgetDeferred from '@/components/GHLWidgetDeferred';
 import './globals.css';
 
 // ---------------------------------------------------------------------------
@@ -92,6 +92,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${oswald.variable} ${inter.variable}`}>
       <head>
+        {/* DNS-prefetch for 3rd-party origins (chat widget loads afterInteractive;
+            full preconnect opens TCP connections too early and competes with
+            critical CSS/JS/image loading on slow connections) */}
+        <link rel="dns-prefetch" href="https://widgets.leadconnectorhq.com" />
+        <link rel="dns-prefetch" href="https://services.leadconnectorhq.com" />
+        <link rel="dns-prefetch" href="https://assets.cdn.filesafe.space" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -103,13 +109,8 @@ export default function RootLayout({
         </a>
         <LayoutClient>{children}</LayoutClient>
 
-        {/* GHL Chat Widget — must use next/script so it loads properly */}
-        <Script
-          src="https://widgets.leadconnectorhq.com/loader.js"
-          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-          data-widget-id="69b2f2b60ec300a774ad843f"
-          strategy="afterInteractive"
-        />
+        {/* GHL Chat Widget — deferred until interaction or 5s to keep reCAPTCHA off critical path */}
+        <GHLWidgetDeferred />
       </body>
     </html>
   );

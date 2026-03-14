@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import LeadForm from "@/components/LeadForm";
-import { CONTACT } from "@/lib/constants";
+import dynamic from "next/dynamic";
+import { CONTACT, SITE } from "@/lib/constants";
+
+const LeadForm = dynamic(() => import("@/components/LeadForm"), { ssr: true });
 
 export const metadata: Metadata = {
   title: "Contact | Unico Futbol Club",
@@ -18,13 +20,16 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-[#F8F9FC]">
       {/* Hero Section */}
-      <section className="relative flex min-h-[17rem] flex-col justify-center bg-primary-dark py-16 text-white md:min-h-[20rem] md:py-20">
+      <section className="relative flex min-h-[17rem] flex-col items-center justify-center bg-primary-dark py-16 text-white md:min-h-[20rem] md:py-20">
         <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary to-primary-dark" />
-        <div className="container-site relative">
-          <h1 className="text-5xl font-extrabold tracking-tight md:text-6xl">
+        <div className="container-site relative z-10 text-center">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-blue-200">
+            {SITE.nameAccented}
+          </p>
+          <h1 className="text-5xl font-extrabold leading-tight text-white md:text-6xl lg:text-7xl">
             GET IN TOUCH
           </h1>
-          <p className="mt-3 text-lg font-medium tracking-widest text-blue-200">
+          <p className="mx-auto mt-4 max-w-xl text-lg text-white/80">
             We&apos;d love to hear from you.
           </p>
         </div>

@@ -206,6 +206,7 @@ export default function LeadForm({
         <button
           type="submit"
           disabled={loading}
+          aria-label={loading ? "Sending message" : buttonText}
           className="mt-2 flex w-full items-center justify-center gap-2 rounded-lg bg-[#1B3A8C] px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[#0F2461] focus:outline-none focus:ring-2 focus:ring-[#3564C4] focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {loading && (
